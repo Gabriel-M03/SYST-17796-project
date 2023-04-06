@@ -6,13 +6,36 @@ package blackjack;
  */
 public abstract class Card {
     //default modifier for child classes
-
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
-    @Override
+   //@Override
+    /*
     public abstract String toString();
+    {
+        //Return string representation of the card
+        //Value??
+    }
+    */
+    public enum Suit {
+        HEARTS, CLUBS, SPADES, DIAMONDS
+    }
+
+    public enum Value {
+        ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
+    }
+    
+    private final Suit suit;
+    private final Value value;
+
+    public Card(Suit suit, Value value) {
+        this.suit = suit;
+        this.value = value;
+    }
+
+    public Value getValue() {
+        return this.value;
+    }
+
+    public Suit getSuit() {
+        return this.suit;
+    }
 
 }

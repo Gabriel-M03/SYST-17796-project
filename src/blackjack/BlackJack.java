@@ -1,4 +1,5 @@
 package blackjack;
+import java.util.Scanner;
 
 public class BlackJack 
 {
@@ -7,7 +8,6 @@ public class BlackJack
      */
     public static void main(String[] args) 
     {
-        //Hello
+        
     }
-
 }

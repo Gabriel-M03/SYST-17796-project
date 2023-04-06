@@ -8,16 +8,32 @@ package blackjack;
  */
 public abstract class Player 
 {
+
+    /**
+     * @return the bet
+     */
+    public int getBet() {
+        return bet;
+    }
+
+    /**
+     * @param bet the bet to set
+     */
+    public void setBet(int bet) {
+        this.bet = bet;
+    }
     private String name; //the unique name for this player
+    private int bet;
 
     /**
      * A constructor that allows you to set the player's unique ID
      *
      * @param name the unique ID to assign to this player.
      */
-    public Player(String name) 
+    public Player(String name, int bet) 
     {
         this.name = name;
+        this.bet = bet;
     }
 
     /**
@@ -43,4 +59,18 @@ public abstract class Player
      * with logic to play your game.
      */
     public abstract void play();
+    
+    public void Stand()
+    {
+        
+    }
+    public void Draw()
+    {
+        
+    }
+    public int Bet(int bet)
+    {
+        this.setBet(bet);
+        return bet;
+    }
 }
