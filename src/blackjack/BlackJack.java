@@ -31,6 +31,9 @@ public class BlackJack
             players.add(player);  
             System.out.println(players.indexOf(players.get(i)) + ", " + "how much are you willing to bet?");
             int bet = input.nextInt();
+            
+            
+            
         }
     }
 }
