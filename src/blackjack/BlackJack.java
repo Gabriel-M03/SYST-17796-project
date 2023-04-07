@@ -36,10 +36,8 @@ public class BlackJack
                 System.out.println("You cannot bet higher than your bank amount, try again");
                 bet = input.nextInt();
             }
-            for(Player p : players)
-            {
-                GroupOfCards.generateHand(i);
-            }           
-        }    
-    }//End of Main method
-}//End of main class
+            
+            
+        }
+    }
+}
