@@ -8,6 +8,11 @@ public class BlackJack
      */
     public static void main(String[] args) 
     {
+        System.out.println("Welcome to Blackjack! Let's start!");
+        System.out.println("How many Players are playing?");
+        Scanner input = new Scanner(System.in);
+        int noOfPlayers = input.nextInt();
         
+
     }
 }
