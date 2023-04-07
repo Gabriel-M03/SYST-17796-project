@@ -29,7 +29,7 @@ public class BlackJack
             String name = input.next();
             BlackjackPlayer player = new BlackjackPlayer(name);
             players.add(player);  
-            System.out.println(players.indexOf(players.get(i)) + ", " + "how much are you willing to bet?");
+            System.out.println(players.get(i).getName() + ", " + "how much are you willing to bet?");
             int bet = input.nextInt();
             
             
