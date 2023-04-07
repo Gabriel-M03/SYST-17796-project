@@ -24,4 +24,9 @@ public class PlayGame extends Game
     {
         return players;
     }
+
+    @Override
+    public void play() {
+
+    }
 }
