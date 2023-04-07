@@ -19,7 +19,13 @@ public class BlackJack
        }
        else 
        {
-           
+           for(int i=0;i<noOfPlayers;i++)
+           {
+               System.out.println("Enter name of Player " + noOfPlayers);
+               String name = input.next();
+               Player player(i) = new Player;
+               
+           }
        }
        
 
