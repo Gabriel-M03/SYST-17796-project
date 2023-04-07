@@ -31,7 +31,11 @@ public class BlackJack
             players.add(player);  
             System.out.println(players.get(i).getName() + ", " + "how much are you willing to bet?");
             int bet = input.nextInt();
-            
+            if (bet > Bank.getBet())
+            {
+                System.out.println("You cannot bet higher than your bank amount, try again");
+                bet = input.nextInt();
+            }
             
             
         }
