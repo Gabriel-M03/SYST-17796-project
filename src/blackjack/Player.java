@@ -30,12 +30,12 @@ public abstract class Player
      *
      * @param name the unique ID to assign to this player.
      */
-    public Player(String name, int bet) 
+        
+    public Player(String name) 
     {
         this.name = name;
-        this.bet = bet;
     }
-
+    
     /**
      * @return the player name
      */
