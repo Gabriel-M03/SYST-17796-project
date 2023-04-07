@@ -12,7 +12,16 @@ public class BlackJack
         System.out.println("How many Players are playing?");
         Scanner input = new Scanner(System.in);
         int noOfPlayers = input.nextInt();
-        
+       if(noOfPlayers > 5)
+       {
+        System.out.println("Players cannot be more than 5, Enter a number again");
+        noOfPlayers = input.nextInt();
+       }
+       else 
+       {
+           
+       }
+       
 
     }
 }
