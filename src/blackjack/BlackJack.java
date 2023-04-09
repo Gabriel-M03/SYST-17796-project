@@ -101,9 +101,10 @@ public class BlackJack
                         break;
                }
            }
-           int playerTotal = number1 + number1;
+           //computeValue();
+           int result = number1 + number1;
            System.out.println();
-           System.out.println(players.get(i).getName() + "'s deck value: " + playerTotal);
+           System.out.println(players.get(i).getName() + "'s deck value: " + result);
         }//End of player for loop
         //Dealer is given card
         System.out.println("\nDealer is given:");
@@ -112,5 +113,13 @@ public class BlackJack
         {
             System.out.println(card.getValue() + " of " + card.getSuit());
         }
+        
+        //This is for the turn of the players
+        for(int i = 0; i < noOfPlayers; i++)
+        {
+            
+        }
+        
+        
     }//End of Main method
 }//End of mmain
