@@ -101,7 +101,7 @@ public class BlackJack
                         break;
                }
            }
-           //computeValue();
+           //computeValue()
            int result = number1 + number1;
            System.out.println();
            System.out.println(players.get(i).getName() + "'s deck value: " + result);
