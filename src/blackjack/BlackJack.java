@@ -43,7 +43,7 @@ public class BlackJack
            //Players given cards
            System.out.println();
            System.out.println(players.get(i).getName() + " is given: ");
-           Card[] cardHand = GroupOfCards.generateHand();
+           Card[] cardHand = GroupOfCards.generateHand(2);
            if(cardHand == cardHand)
            {
                System.out.println("Identical cards given - reshuffling");

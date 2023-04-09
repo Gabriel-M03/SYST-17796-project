@@ -46,8 +46,8 @@ public class GroupOfCards
     public void setSize(int size) {
         this.size = size;
     }
-    //public static Card[] generateHand(int handSize) {
-    public static Card[] generateHand(Player player) {    
+    public static Card[] generateHand(int handSize) {
+    //public static Card[] generateHand(Player player) {    
         // we'll use this to generate random numbers
         Random random = new Random();
         
