@@ -16,7 +16,7 @@ public class BlackJack
         Scanner input = new Scanner(System.in);
         int noOfPlayers = input.nextInt();
         int number1 = 0;
-        int dealerNum;
+        String name = " ";
         do
         {
             if(noOfPlayers >= 5)
@@ -29,7 +29,7 @@ public class BlackJack
        for(int i=0;i<noOfPlayers;i++)//Base settings for players 
        {
            System.out.println("Enter name of Player " + (i+1));
-           String name = input.next();
+           name = input.next();
            BlackjackPlayer player = new BlackjackPlayer(name);
            players.add(player);  
            System.out.println();
@@ -60,48 +60,8 @@ public class BlackJack
                    System.out.println(card.getValue() + " of " + card.getSuit());
                }  
            }
-           for(Card card : cardHand)
-           {
-               switch(card.getValue())
-               {
-                   case TWO:
-                       number1 = 2;
-                       break;
-                    
-                   case THREE:
-                       number1 = 3;
-                       break;
-                       
-                   case FOUR:
-                       number1 = 4;
-                       break;
-                       
-                   case FIVE:
-                        number1 = 5;
-                        break;
-                        
-                   case SIX:
-                        number1 = 6;
-                        break;
-                        
-                   case SEVEN:
-                        number1 = 7;
-                        break;
-                    
-                   case EIGHT:
-                        number1 = 8;
-                        break;
-                        
-                   case NINE:
-                        number1 = 9;
-                        break;
-                        
-                   case TEN:
-                        number1 = 10;
-                        break;
-               }
-           }
-           //computeValue()
+           PlayGame game = new PlayGame(name);//Object call
+           game.computeValue();//Method call to compute the total value of the players deck
            int result = number1 + number1;
            System.out.println();
            System.out.println(players.get(i).getName() + "'s deck value: " + result);
@@ -113,13 +73,13 @@ public class BlackJack
         {
             System.out.println(card.getValue() + " of " + card.getSuit());
         }
-        
+        PlayGame game = new PlayGame(name);//Object call
+        game.computeValue();//Method call to compute the total value of the dealer
+        System.out.println("Dealers total deck value: ");
         //This is for the turn of the players
         for(int i = 0; i < noOfPlayers; i++)
         {
             
-        }
-        
-        
+        }               
     }//End of Main method
 }//End of mmain
