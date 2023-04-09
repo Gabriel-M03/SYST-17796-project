@@ -67,18 +67,9 @@ public class BlackJack
            System.out.println(players.get(i).getName() + "'s deck value: " + result);
            
            System.out.println();
-           BlackjackPlayer black = new BlackjackPlayer(name);
+
            System.out.println("Player " + (i+1) + ", do you want to stand or draw");
-           System.out.println("1 for stand, and 2 for draw");
-           int decision = input.nextInt();
-           if(decision == 1)
-           {
-               black.Stand();
-           }
-           else if(decision == 2)
-           {
-               black.Draw();
-           }
+
         }//End of player for loop
         //Dealer is given card
         System.out.println("\nDealer is given:");
