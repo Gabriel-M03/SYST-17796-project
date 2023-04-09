@@ -29,4 +29,8 @@ public class PlayGame extends Game
     public void play() {
 
     }
+    public void computeValue()
+    {
+        
+    }
 }
