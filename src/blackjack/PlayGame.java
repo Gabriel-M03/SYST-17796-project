@@ -20,6 +20,7 @@ public class PlayGame extends Game
         this.players = players;
     }
     
+    @Override
     public ArrayList<Player> getPlayers() 
     {
         return players;
@@ -29,50 +30,85 @@ public class PlayGame extends Game
     public void play() {
 
     }
-    public void computeValue()
+    
+    public int computeValue()
     {
         Card[] cardHand = GroupOfCards.generateHand(2);
-        int number1 = 0;
+        int handValue = 0;
+        int acesInHand = 0;
         for(Card card : cardHand)
         {
             switch(card.getValue())
             {
                 case TWO:
-                    number1 = 2;
+                    handValue += 2;
                     break;
 
                 case THREE:
-                    number1 = 3;
+                    handValue += 3;
                     break;
 
                 case FOUR:
-                    number1 = 4;
+                    handValue += 4;
                     break;
 
                 case FIVE:
-                     number1 = 5;
+                     handValue += 5;
                      break;
 
                 case SIX:
-                     number1 = 6;
+                     handValue += 6;
                      break;
 
                 case SEVEN:
-                     number1 = 7;
+                     handValue += 7;
                      break;
 
                 case EIGHT:
-                     number1 = 8;
+                     handValue += 8;
                      break;
 
                 case NINE:
-                     number1 = 9;
+                     handValue += 9;
                      break;
 
                 case TEN:
-                     number1 = 10;
+                     handValue += 10;
                      break;
+                
+                case JACK:
+                case QUEEN:
+                case KING:
+                    handValue += 10;
+                     break;
+               
+                case ACE:
+                    acesInHand++;
+                    break;
+               
             }
         }
-    }//end of computeValue method
+        
+      //ACE special value logic
+      for (int i=0; i< acesInHand; i++)
+      {
+          if(handValue <=10)
+          {
+              handValue +=11;
+          }
+          else 
+          {
+              handValue +=1;
+          }
+      }
+      //check if more than 1 ACE and value is greater than 21
+      if (handValue > 21 && acesInHand > 0)
+      {
+        handValue -=10;
+      }
+     
+      return handValue;
+    } 
 }
+     //end of computeValue method
+

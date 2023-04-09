@@ -15,7 +15,7 @@ public class BlackJack
         System.out.println("How many Players are playing?");
         Scanner input = new Scanner(System.in);
         int noOfPlayers = input.nextInt();
-        int number1 = 0;
+        //int number1 = 0;
         String name = " ";
         do
         {
@@ -43,7 +43,7 @@ public class BlackJack
            //Players given cards
            System.out.println();
            System.out.println(players.get(i).getName() + " is given: ");
-           Card[] cardHand = GroupOfCards.generateHand(2);
+           Card[] cardHand = GroupOfCards.generateHand();
            if(cardHand == cardHand)
            {
                System.out.println("Identical cards given - reshuffling");
@@ -61,8 +61,8 @@ public class BlackJack
                }  
            }
            PlayGame game = new PlayGame(name);//Object call
-           game.computeValue();//Method call to compute the total value of the players deck
-           int result = number1 + number1;
+           int result = game.computeValue();//Method call to compute the total value of the players deck
+           //int result = game.handValue;
            System.out.println();
            System.out.println(players.get(i).getName() + "'s deck value: " + result);
         }//End of player for loop
@@ -74,8 +74,8 @@ public class BlackJack
             System.out.println(card.getValue() + " of " + card.getSuit());
         }
         PlayGame game = new PlayGame(name);//Object call
-        game.computeValue();//Method call to compute the total value of the dealer
-        System.out.println("Dealers total deck value: ");
+        int result = game.computeValue();//Method call to compute the total value of the dealer
+        System.out.println("Dealers total deck value: " + result );
         //This is for the turn of the players
         for(int i = 0; i < noOfPlayers; i++)
         {
