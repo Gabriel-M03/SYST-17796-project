@@ -15,6 +15,8 @@ public class BlackJack
         System.out.println("How many Players are playing?");
         Scanner input = new Scanner(System.in);
         int noOfPlayers = input.nextInt();
+        int number1 = 0;
+        int dealerNum;
         do
         {
             if(noOfPlayers >= 5)
@@ -24,39 +26,85 @@ public class BlackJack
             }
         }
        while(noOfPlayers >= 5);
-        for(int i=0;i<noOfPlayers;i++)//Base settings for players 
-        {
-            System.out.println("Enter name of Player " + (i+1));
-            String name = input.next();
-            BlackjackPlayer player = new BlackjackPlayer(name);
-            players.add(player);  
-            System.out.println(players.get(i).getName() + ", " + "how much are you willing to bet?");
-            int bet = input.nextInt();
-            if (bet > Bank.getBet())
-            {
-                System.out.println("You cannot bet higher than your bank amount, try again");
-                bet = input.nextInt();
-            }
-            //Players given cards
-            System.out.println(players.get(i).getName() + " is given: ");
-            Card[] cardHand = GroupOfCards.generateHand(2);
-            if(cardHand == cardHand)
-            {
-                System.out.println("Identical cards given - reshuffling");
-                for (Card card : cardHand) 
-                {
-                    System.out.println(card.getValue() + " of " + card.getSuit());
-                }
-            }
-            else
-            {   
-                System.out.println("No duplicates - continuing");
-                for (Card card : cardHand) 
-                {
-                    System.out.println(card.getValue() + " of " + card.getSuit());
-                }  
-            }
-        }
+       for(int i=0;i<noOfPlayers;i++)//Base settings for players 
+       {
+           System.out.println("Enter name of Player " + (i+1));
+           String name = input.next();
+           BlackjackPlayer player = new BlackjackPlayer(name);
+           players.add(player);  
+           System.out.println();
+           System.out.println(players.get(i).getName() + ", " + "how much are you willing to bet?");
+           int bet = input.nextInt();
+           if (bet > Bank.getBet())
+           {
+               System.out.println("You cannot bet higher than your bank amount, try again");
+               bet = input.nextInt();
+           }
+           //Players given cards
+           System.out.println();
+           System.out.println(players.get(i).getName() + " is given: ");
+           Card[] cardHand = GroupOfCards.generateHand(2);
+           if(cardHand == cardHand)
+           {
+               System.out.println("Identical cards given - reshuffling");
+               for (Card card : cardHand) 
+               {
+                   System.out.println(card.getValue() + " of " + card.getSuit());
+               }
+           }
+           else
+           {   
+               System.out.println("No duplicates - continuing");
+               for (Card card : cardHand) 
+               {
+                   System.out.println(card.getValue() + " of " + card.getSuit());
+               }  
+           }
+           for(Card card : cardHand)
+           {
+               switch(card.getValue())
+               {
+                   case TWO:
+                       number1 = 2;
+                       break;
+                    
+                   case THREE:
+                       number1 = 3;
+                       break;
+                       
+                   case FOUR:
+                       number1 = 4;
+                       break;
+                       
+                   case FIVE:
+                        number1 = 5;
+                        break;
+                        
+                   case SIX:
+                        number1 = 6;
+                        break;
+                        
+                   case SEVEN:
+                        number1 = 7;
+                        break;
+                    
+                   case EIGHT:
+                        number1 = 8;
+                        break;
+                        
+                   case NINE:
+                        number1 = 9;
+                        break;
+                        
+                   case TEN:
+                        number1 = 10;
+                        break;
+               }
+           }
+           int playerTotal = number1 + number1;
+           System.out.println();
+           System.out.println(players.get(i).getName() + "'s deck value: " + playerTotal);
+        }//End of player for loop
         //Dealer is given card
         System.out.println("\nDealer is given:");
         Card [] cardHand = GroupOfCards.generateHand(1);
@@ -64,5 +112,5 @@ public class BlackJack
         {
             System.out.println(card.getValue() + " of " + card.getSuit());
         }
-    }
-}
+    }//End of Main method
+}//End of mmain
