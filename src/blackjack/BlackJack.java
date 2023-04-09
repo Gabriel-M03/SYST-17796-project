@@ -65,6 +65,20 @@ public class BlackJack
            //int result = game.handValue;
            System.out.println();
            System.out.println(players.get(i).getName() + "'s deck value: " + result);
+           
+           System.out.println();
+           BlackjackPlayer black = new BlackjackPlayer(name);
+           System.out.println("Player " + (i+1) + ", do you want to stand or draw");
+           System.out.println("1 for stand, and 2 for draw");
+           int decision = input.nextInt();
+           if(decision == 1)
+           {
+               black.Stand();
+           }
+           else if(decision == 2)
+           {
+               black.Draw();
+           }
         }//End of player for loop
         //Dealer is given card
         System.out.println("\nDealer is given:");
@@ -76,10 +90,6 @@ public class BlackJack
         PlayGame game = new PlayGame(name);//Object call
         int result = game.computeValue();//Method call to compute the total value of the dealer
         System.out.println("Dealers total deck value: " + result );
-        //This is for the turn of the players
-        for(int i = 0; i < noOfPlayers; i++)
-        {
-            
-        }               
+        //This is for the turn of the players             
     }//End of Main method
 }//End of mmain

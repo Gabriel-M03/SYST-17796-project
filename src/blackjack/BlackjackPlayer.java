@@ -19,14 +19,20 @@ public class BlackjackPlayer extends Player
 
     @Override
     public void Draw()
-    {}
+    {
+    
+    }
     
     @Override
     public void Stand()
-    {}
+    {
+    
+    }
     
     public void play()
-    {}
+    {
+    
+    }
     
     
 }
