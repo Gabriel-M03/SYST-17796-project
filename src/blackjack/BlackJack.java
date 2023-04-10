@@ -81,10 +81,13 @@ public class BlackJack
 
         }//End of player for loop
         Card[] cardHand = GroupOfCards.generateHand(1);
+        PlayGame game = new PlayGame(name);
+        int result = game.computeValue(cardHand);
         System.out.println("Dealer is given:");
         for (Card card : cardHand) 
         {
             System.out.println(card.getValue() + " of " + card.getSuit());
+            System.out.println("Dealer's deck value is: " + result);
         }       
         //This is for the turn of the players             
     }//End of Main method

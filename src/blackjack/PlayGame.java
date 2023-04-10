@@ -30,7 +30,7 @@ public class PlayGame extends Game
     public void play() {
         BlackJack game = new BlackJack();
         
-        int dealerResult =  
+        int dealerResult = 0; 
                 
         for (Player player: players)
         {
