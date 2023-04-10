@@ -30,7 +30,7 @@ public class PlayGame extends Game
     public void play() {
         BlackJack game = new BlackJack();
         
-        int dealerResult = 0; 
+        int dealerResult; 
         Card[] dealerHand = GroupOfCards.generateHand(1);
         PlayGame dealerGame = new PlayGame("Dealer");
         dealerResult = dealerGame.computeValue(dealerHand);
@@ -38,6 +38,7 @@ public class PlayGame extends Game
         for (Player player: players)
         {
             int playerResult = BlackJack.result;
+            int balance;
         if (playerResult == 21)
         {System.out.print(player.getName() + " BlackJack! ");}
         if (dealerResult == 21)
@@ -45,15 +46,21 @@ public class PlayGame extends Game
         
         if (playerResult > 21)
         {System.out.println(player.getName() + " busted! Dealer wins!");
-          //  int balance = Bank.getBalance - Bank.getBet();
+          balance = Bank.getBalance() - Bank.getBet();
+          Bank.setBalance(balance);
         }
         else if (dealerResult > 21)
         {System.out.println("Dealer busted! " + player.getName() + " wins!");}
         else if (playerResult > dealerResult)
         {System.out.println(player.getName() + " wins!");}
         else if (playerResult == dealerResult)
-        {System.out.println(player.getName() + " and Dealer tie.");}
-        else {System.out.println("Dealer wins!");}
+        {System.out.println(player.getName() + " and Dealer tie.");
+          balance = Bank.getBalance() - Bank.getBet();
+          Bank.setBalance(balance);
+        }
+        else {System.out.println("Dealer wins!");
+          balance = Bank.getBalance() - Bank.getBet();
+          Bank.setBalance(balance);}
         }
     }
     

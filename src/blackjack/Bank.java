@@ -30,5 +30,12 @@ public class Bank
         return balance;
     }
 
+    /**
+     * @param aBalance the balance to set
+     */
+    public static void setBalance(int balance) {
+        balance = balance;
+    }
+
     
 }
