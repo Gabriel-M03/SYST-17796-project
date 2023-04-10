@@ -13,7 +13,7 @@ public class BlackJack
     {
         ArrayList<Player> players = new ArrayList<>();
         System.out.println("Welcome to Blackjack! Let's start!");
-        System.out.println("How many Players are playing?");
+        System.out.print("How many Players are playing? ");
         Scanner input = new Scanner(System.in);
         int noOfPlayers = input.nextInt();
         boolean a = true;
@@ -33,21 +33,21 @@ public class BlackJack
        {
             for(int i=0;i<noOfPlayers;i++)//Base settings for players 
             {
-                System.out.println("Enter name of Player " + (i+1));
+                System.out.print("Enter name of Player " + (i+1) + ": ");
                 name = input.next();
                 BlackjackPlayer player = new BlackjackPlayer(name);
                 players.add(player);  
                 System.out.println();
-                System.out.println(players.get(i).getName() + ", " + "how much are you willing to bet?");
+                System.out.print(players.get(i).getName() + ", " + "how much are you willing to bet? ");
                 int bet = input.nextInt();
                 if (bet > Bank.getBet())
                 {
-                    System.out.println("You cannot bet higher than your bank amount, try again");
+                    System.out.println("You cannot bet higher than your bank amount, try again: ");
                     bet = input.nextInt();
                 }
                 if (bet < 50)
                 {
-                    System.out.println("You cannot bet lower than the minimum amount of 50, try again");
+                    System.out.println("You cannot bet lower than the minimum amount of 50, try again: ");
                     bet = input.nextInt();
                 }    
 

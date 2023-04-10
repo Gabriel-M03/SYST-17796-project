@@ -21,7 +21,7 @@ public class BlackjackPlayer extends Player
         Card [] hand = GroupOfCards.generateHand(1);
         for (Card card : hand) 
         {
-            System.out.println("Player draws " + card.getValue() + " of " + card.getSuit());
+            System.out.println("Card drawn: " + card.getValue() + " of " + card.getSuit());
         }
         //players.get(1).addCard(hand);
     }
@@ -36,7 +36,7 @@ public class BlackjackPlayer extends Player
     {      
            Scanner input = new Scanner(System.in);
            System.out.println("Player do you want to stand or draw");
-           System.out.println("1 for stand, and 2 for draw");
+           System.out.print("1 for stand, and 2 for draw: ");
            int decision = input.nextInt();
            if(decision == 1)
            {
@@ -55,7 +55,7 @@ public class BlackjackPlayer extends Player
     {
         Scanner input = new Scanner(System.in);
         System.out.println("Do you want to restart the game?");
-        System.out.println("Type yes or no");
+        System.out.print("Type 1 for yes or 0 for no: ");
         int choice = input.nextInt();
         boolean a = true;
         
