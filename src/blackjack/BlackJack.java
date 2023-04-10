@@ -16,7 +16,6 @@ public class BlackJack
         Scanner input = new Scanner(System.in);
         int noOfPlayers = input.nextInt();
         boolean a = true;
-        //int number1 = 0;
         String name = " ";
         BlackjackPlayer black = new BlackjackPlayer(name);
         PlayGame game = new PlayGame(name);
@@ -28,9 +27,9 @@ public class BlackJack
                 noOfPlayers = input.nextInt();
             }
         }
-       while(noOfPlayers >= 5);
-       do
-       {
+        while(noOfPlayers >= 5);
+        do
+        {
             for(int i=0;i<noOfPlayers;i++)//Base settings for players 
             {
                 System.out.println("Enter name of Player " + (i+1) + ": ");
@@ -77,44 +76,84 @@ public class BlackJack
                 System.out.println(players.get(i).getName() + "'s deck value: " + result);
 
                 System.out.println();
-
-                
-
-             }//End of player for loop
-             Card[] cardHand = GroupOfCards.generateHand(1);
-             int result = game.computeValue(cardHand);
-             System.out.println("Dealer is given:");
-             for (Card card : cardHand) 
-             {
-                 System.out.println(card.getValue() + " of " + card.getSuit());
-                 System.out.println("Dealer's deck value is: " + result);
-                 //if (result <17)
-                   //black.Draw();
-                 //else 
-                   black.Stand();
-              }
-             
-             black.play();
-             //PlayGame game = new PlayGame (name);
-             //This is for the turn of the players
-             if(black.ask())
-             {}
-             else
-             {
-                 game.declareWinner();
-                 break;
+            }//End of player for loop
+            Card[] cardHand = GroupOfCards.generateHand(1);
+            int result = game.computeValue(cardHand);
+            System.out.println("Dealer is given:");
+            for (Card card : cardHand) 
+            {
+                System.out.println(card.getValue() + " of " + card.getSuit());
+                System.out.println("Dealer's deck value is: " + result);
+                //if (result <17)
+                  //black.Draw();
+                //else 
+                  black.Stand();
              }
+
+            black.play();
+            //PlayGame game = new PlayGame (name);
+            //This is for the turn of the players
+            int dealerResult; 
+            Card[] dealerHand = GroupOfCards.generateHand(1);
+            PlayGame dealerGame = new PlayGame("Dealer");
+            dealerResult = dealerGame.computeValue(dealerHand);
+
+            System.out.println();
+            System.out.println("Final Game Results:");
+            System.out.println();
+            for (Player player: players)
+            {
+                int playerResult = BlackJack.result;
+                int balance;
+                if (playerResult == 21)
+                {System.out.print(player.getName() + " BlackJack! ");}
+                if (dealerResult == 21)
+                {System.out.print("Dealer BlackJack!");}
+
+                if (playerResult >= 21)
+                {
+                    System.out.println(player.getName() + " busted! Dealer wins!");
+                    balance = Bank.getBalance() - Bank.getBet();
+                    Bank.setBalance(balance);
+                }
+                else if (dealerResult >= 21)
+                {
+                    System.out.println("Dealer busted! " + player.getName() + " wins!");
+                }
+                else if (playerResult <= dealerResult)
+                {
+                    System.out.println(player.getName() + " wins!");
+                }
+                else if (playerResult == dealerResult)
+                {
+                    System.out.println(player.getName() + " and Dealer tie.");
+                    balance = Bank.getBalance() - Bank.getBet();
+                    Bank.setBalance(balance);
+                }
+                else 
+                {
+                    System.out.println("Dealer wins!");
+                    balance = Bank.getBalance() - Bank.getBet();
+                    Bank.setBalance(balance);
+                }        
+            }//End of for loop for final score
+            if(black.ask())
+            {}
+            else
+            {
+                game.declareWinner();
+                break;
+            }
         }//end of main do
-       while(a = true);
-       //game.declareWinner();
-       
-       //BlackJack game = new BlackJack();
+        while(a = true);
         int dealerResult; 
-        //ArrayList<Player> players = new ArrayList<>();
         Card[] dealerHand = GroupOfCards.generateHand(1);
         PlayGame dealerGame = new PlayGame("Dealer");
         dealerResult = dealerGame.computeValue(dealerHand);
-                
+        
+        System.out.println();
+        System.out.println("Final Game Results:");
+        System.out.println();
         for (Player player: players)
         {
             int playerResult = BlackJack.result;
@@ -150,6 +189,6 @@ public class BlackJack
                 balance = Bank.getBalance() - Bank.getBet();
                 Bank.setBalance(balance);
             }        
+        }//End of for loop for final score
     }//End of Main method
-    }
 }//End of mmain

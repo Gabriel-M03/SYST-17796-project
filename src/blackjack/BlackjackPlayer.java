@@ -59,6 +59,7 @@ public class BlackjackPlayer extends Player
     public boolean ask()
     {
         Scanner input = new Scanner(System.in);
+        System.out.println();
         System.out.println("Do you want to restart the game?");
         System.out.println("Type 1 for yes or 0 for no: ");
         int choice = input.nextInt();
