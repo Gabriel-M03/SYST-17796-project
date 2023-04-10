@@ -61,7 +61,7 @@ public class BlackJack
                }  
            }
            PlayGame game = new PlayGame(name);//Object call
-           int result = game.computeValue();//Method call to compute the total value of the players deck
+           int result = game.computeValue(cardHand);//Method call to compute the total value of the players deck
            //int result = game.handValue;
            System.out.println();
            System.out.println(players.get(i).getName() + "'s deck value: " + result);
@@ -80,7 +80,7 @@ public class BlackJack
             System.out.println(card.getValue() + " of " + card.getSuit());
         }
         PlayGame game = new PlayGame(name);//Object call
-        int result = game.computeValue();//Method call to compute the total value of the dealer
+        int result = game.computeValue(cardHand);//Method call to compute the total value of the dealer
         System.out.println("Dealers total deck value: " + result );
         //This is for the turn of the players             
     }//End of Main method

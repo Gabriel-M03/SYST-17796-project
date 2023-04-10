@@ -31,9 +31,10 @@ public class PlayGame extends Game
 
     }
     
-    public int computeValue()
+    public int computeValue(Card[] cardHand)
     {
-        Card[] cardHand = GroupOfCards.generateHand(2);
+        //Card[] cardHand = GroupOfCards.generateHand(2);
+        //Card[] cardHand = BlackJack.cardHand;
         int handValue = 0;
         int acesInHand = 0;
         for(Card card : cardHand)
