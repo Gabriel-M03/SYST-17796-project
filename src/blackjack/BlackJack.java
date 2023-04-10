@@ -90,6 +90,10 @@ public class BlackJack
              {
                  System.out.println(card.getValue() + " of " + card.getSuit());
                  System.out.println("Dealer's deck value is: " + result);
+                 if (result <17)
+                   black.Draw();
+                 else 
+                   black.Stand();
              }       
              //This is for the turn of the players
              if(black.ask())

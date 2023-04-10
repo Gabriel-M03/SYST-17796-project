@@ -46,6 +46,10 @@ public class BlackjackPlayer extends Player
            {
                Stand();
            }
+           if (Blackjack.result > 21)
+           {
+               Stand();
+           }
            else if(decision == 2)
            {
                Draw();

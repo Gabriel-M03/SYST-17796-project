@@ -41,7 +41,9 @@ public class PlayGame extends Game
         {System.out.print("Dealer BlackJack!");}
         
         if (playerResult > 21)
-        {System.out.println(player.getName() + " busted! Dealer wins!");}
+        {System.out.println(player.getName() + " busted! Dealer wins!");
+          //  int balance = Bank.getBalance - Bank.getBet();
+        }
         else if (dealerResult > 21)
         {System.out.println("Dealer busted! " + player.getName() + " wins!");}
         else if (playerResult > dealerResult)

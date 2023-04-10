@@ -21,4 +21,14 @@ public class Bank
         this.bet = bet;
     }
     private static int bet = 250;
+    private static int balance = 250;
+
+    /**
+     * @return the balance
+     */
+    public static int getBalance() {
+        return balance;
+    }
+
+    
 }
