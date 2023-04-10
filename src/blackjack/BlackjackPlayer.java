@@ -35,12 +35,14 @@ public class BlackjackPlayer extends Player
     public void play()
     {      
            Scanner input = new Scanner(System.in);
+           PlayGame game = new PlayGame(getName());
            System.out.println("Player do you want to stand or draw");
            System.out.println("1 for stand, and 2 for draw: ");
            int decision = input.nextInt();
            if(decision == 1)
            {
                Stand();
+               game.declareWinner();
            }
            if (BlackJack.result > 21)
            {

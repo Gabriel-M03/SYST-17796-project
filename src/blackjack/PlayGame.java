@@ -27,10 +27,9 @@ public class PlayGame extends Game
     }
 
     @Override
-    public void play() 
+    public void declareWinner() 
     {
         BlackJack game = new BlackJack();
-        //BlackjackPlayer player = new BlackjackPlayer(getName());
         int dealerResult; 
         ArrayList<Player> players = new ArrayList<>();
         Card[] dealerHand = GroupOfCards.generateHand(1);
@@ -160,11 +159,8 @@ public class PlayGame extends Game
 //      }
       return handValue;
     }
-    @Override
-    public void declareWinner()
-    {
-        
-    }
+    public void play()
+    {}
 }
      //end of computeValue method
 

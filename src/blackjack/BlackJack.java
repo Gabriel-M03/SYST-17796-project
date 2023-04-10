@@ -19,6 +19,7 @@ public class BlackJack
         //int number1 = 0;
         String name = " ";
         BlackjackPlayer black = new BlackjackPlayer(name);
+        PlayGame game = new PlayGame(name);
         do
         {
             if(noOfPlayers >= 5)
@@ -70,7 +71,6 @@ public class BlackJack
                         System.out.println(card.getValue() + " of " + card.getSuit());
                     }  
                 }
-                PlayGame game = new PlayGame(name);//Object call
                 int result = game.computeValue(cardHand);//Method call to compute the total value of the players deck
                 //int result = game.handValue;
                 System.out.println();
@@ -82,32 +82,30 @@ public class BlackJack
 
              }//End of player for loop
              Card[] cardHand = GroupOfCards.generateHand(1);
-             PlayGame game = new PlayGame(name);
              int result = game.computeValue(cardHand);
              System.out.println("Dealer is given:");
              for (Card card : cardHand) 
              {
                  System.out.println(card.getValue() + " of " + card.getSuit());
                  System.out.println("Dealer's deck value is: " + result);
-                 /*
                  if (result <17)
                    black.Draw();
                  else 
                    black.Stand();
-                */
               }
              
              black.play();
              //PlayGame game = new PlayGame (name);
-             game.play();
              //This is for the turn of the players
              if(black.ask())
              {}
              else
              {
+                 game.declareWinner();
                  break;
              }
         }//end of main do
        while(a = true);
+       game.declareWinner();
     }//End of Main method
 }//End of mmain
