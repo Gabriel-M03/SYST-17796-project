@@ -19,42 +19,43 @@ public class BlackjackPlayer extends Player
     public void Draw()
     {
         Card [] hand = GroupOfCards.generateHand(1);
+        PlayGame game = new PlayGame(getName());
         for (Card card : hand) 
         {
+            System.out.println();
             System.out.println("Card drawn: " + card.getValue() + " of " + card.getSuit());
+            game.computeValue(hand);
+            System.out.println("New deck is: " + card.getValue());
+            System.out.println();
         }
-        //players.get(1).addCard(hand);
     }
     
     @Override
     public void Stand()
-    {
-    PlayGame game = new PlayGame(getName());
-    game.declareWinner();
-    }
+    {}
     
 
     @Override
     public void play()
     {      
-           Scanner input = new Scanner(System.in);
-           PlayGame game = new PlayGame(getName());
-           System.out.println("Player do you want to stand or draw");
-           System.out.println("1 for stand, and 2 for draw: ");
-           int decision = input.nextInt();
-           if(decision == 1)
-           {
-               Stand();
-               game.declareWinner();
-           }
-           if (BlackJack.result > 21)
-           {
-               Stand();
-           }
-           else if(decision == 2)
-           {
-               Draw();
-           }           
+        Scanner input = new Scanner(System.in);
+        PlayGame game = new PlayGame(getName());
+        System.out.println("Player do you want to stand or draw");
+        System.out.println("1 for stand, and 2 for draw: ");
+        int decision = input.nextInt();
+        if(decision == 1)
+        {
+            Stand();
+            game.declareWinner();
+        }
+        if (BlackJack.result > 21)
+        {
+            Stand();
+        }
+        else if(decision == 2)
+        {
+            Draw();
+        }           
     }
     public boolean ask()
     {
