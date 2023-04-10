@@ -88,9 +88,9 @@ public class BlackJack
              {
                  System.out.println(card.getValue() + " of " + card.getSuit());
                  System.out.println("Dealer's deck value is: " + result);
-                 if (result <17)
-                   black.Draw();
-                 else 
+                 //if (result <17)
+                   //black.Draw();
+                 //else 
                    black.Stand();
               }
              
@@ -106,6 +106,50 @@ public class BlackJack
              }
         }//end of main do
        while(a = true);
-       game.declareWinner();
+       //game.declareWinner();
+       
+       //BlackJack game = new BlackJack();
+        int dealerResult; 
+        //ArrayList<Player> players = new ArrayList<>();
+        Card[] dealerHand = GroupOfCards.generateHand(1);
+        PlayGame dealerGame = new PlayGame("Dealer");
+        dealerResult = dealerGame.computeValue(dealerHand);
+                
+        for (Player player: players)
+        {
+            int playerResult = BlackJack.result;
+            int balance;
+            if (playerResult == 21)
+            {System.out.print(player.getName() + " BlackJack! ");}
+            if (dealerResult == 21)
+            {System.out.print("Dealer BlackJack!");}
+
+            if (playerResult >= 21)
+            {
+                System.out.println(player.getName() + " busted! Dealer wins!");
+                balance = Bank.getBalance() - Bank.getBet();
+                Bank.setBalance(balance);
+            }
+            else if (dealerResult >= 21)
+            {
+                System.out.println("Dealer busted! " + player.getName() + " wins!");
+            }
+            else if (playerResult <= dealerResult)
+            {
+                System.out.println(player.getName() + " wins!");
+            }
+            else if (playerResult == dealerResult)
+            {
+                System.out.println(player.getName() + " and Dealer tie.");
+                balance = Bank.getBalance() - Bank.getBet();
+                Bank.setBalance(balance);
+            }
+            else 
+            {
+                System.out.println("Dealer wins!");
+                balance = Bank.getBalance() - Bank.getBet();
+                Bank.setBalance(balance);
+            }        
     }//End of Main method
+    }
 }//End of mmain

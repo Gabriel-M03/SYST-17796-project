@@ -28,7 +28,10 @@ public class BlackjackPlayer extends Player
     
     @Override
     public void Stand()
-    {}
+    {
+    PlayGame game = new PlayGame(getName());
+    game.declareWinner();
+    }
     
 
     @Override
