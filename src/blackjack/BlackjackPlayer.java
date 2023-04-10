@@ -67,11 +67,13 @@ public class BlackjackPlayer extends Player
         
         if(choice == 1)
         {
+            System.out.println();
             System.out.println("Game continuing...");
             a = true;
         }
         else if(choice == 0)
         {
+            System.out.println();
             System.out.println("Game ending");
             a = false;
         }   

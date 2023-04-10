@@ -99,8 +99,7 @@ public class BlackJack
             dealerResult = dealerGame.computeValue(dealerHand);
 
             System.out.println();
-            System.out.println("Final Game Results:");
-            System.out.println();
+            System.out.println("Game Results:");
             for (Player player: players)
             {
                 int playerResult = BlackJack.result;
@@ -153,7 +152,6 @@ public class BlackJack
         
         System.out.println();
         System.out.println("Final Game Results:");
-        System.out.println();
         for (Player player: players)
         {
             int playerResult = BlackJack.result;
@@ -173,7 +171,7 @@ public class BlackJack
             {
                 System.out.println("Dealer busted! " + player.getName() + " wins!");
             }
-            else if (playerResult <= dealerResult)
+            else if (playerResult < dealerResult)
             {
                 System.out.println(player.getName() + " wins!");
             }
