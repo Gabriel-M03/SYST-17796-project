@@ -94,7 +94,8 @@ public class BlackJack
                    black.Draw();
                  else 
                    black.Stand();
-             }       
+              }
+             PlayGame.play();
              //This is for the turn of the players
              if(black.ask())
              {}

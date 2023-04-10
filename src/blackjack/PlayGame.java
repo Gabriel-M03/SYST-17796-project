@@ -31,6 +31,9 @@ public class PlayGame extends Game
         BlackJack game = new BlackJack();
         
         int dealerResult = 0; 
+        Card[] dealerHand = GroupOfCards.generateHand(1);
+        PlayGame dealerGame = new PlayGame("Dealer");
+        dealerResult = dealerGame.computeValue(dealerHand);
                 
         for (Player player: players)
         {
