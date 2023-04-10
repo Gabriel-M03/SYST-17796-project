@@ -51,20 +51,24 @@ public class BlackjackPlayer extends Player
                Draw();
            }           
     }
-    public void ask()
+    public boolean ask()
     {
         Scanner input = new Scanner(System.in);
         System.out.println("Do you want to restart the game?");
         System.out.println("Type yes or no");
         int choice = input.nextInt();
+        boolean a = true;
         
         if(choice == 1)
         {
             System.out.println("Game continuing...");
+            a = true;
         }
         else if(choice == 0)
         {
             System.out.println("Game ending");
-        }     
+            a = false;
+        }   
+        return a;
     }
 }
