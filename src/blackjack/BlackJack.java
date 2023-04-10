@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class BlackJack 
 {
+
+    static int result;
     /**
      * @param args the command line arguments
      */
@@ -39,6 +41,12 @@ public class BlackJack
                System.out.println("You cannot bet higher than your bank amount, try again");
                bet = input.nextInt();
            }
+           if (bet < 50)
+           {
+               System.out.println("You cannot bet lower than the minimum amount of 50, try again");
+               bet = input.nextInt();
+           }    
+           
            //Players given cards
            System.out.println();
            System.out.println(players.get(i).getName() + " is given: ");
@@ -60,7 +68,7 @@ public class BlackJack
                }  
            }
            PlayGame game = new PlayGame(name);//Object call
-           int result = game.computeValue();//Method call to compute the total value of the players deck
+           int result = game.computeValue(cardHand);//Method call to compute the total value of the players deck
            //int result = game.handValue;
            System.out.println();
            System.out.println(players.get(i).getName() + "'s deck value: " + result);
@@ -72,16 +80,12 @@ public class BlackJack
            black.ask();
 
         }//End of player for loop
-        //Dealer is given card
-        System.out.println("\nDealer is given:");
-        Card [] cardHand = GroupOfCards.generateHand(1);
+        Card[] cardHand = GroupOfCards.generateHand(1);
+        System.out.println("Dealer is given:");
         for (Card card : cardHand) 
         {
             System.out.println(card.getValue() + " of " + card.getSuit());
-        }
-        PlayGame game = new PlayGame(name);//Object call
-        int result = game.computeValue();//Method call to compute the total value of the dealer
-        System.out.println("Dealers total deck value: " + result );
-        //This is for the turn of the players
+        }       
+        //This is for the turn of the players             
     }//End of Main method
 }//End of mmain
