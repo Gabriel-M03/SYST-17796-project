@@ -13,7 +13,7 @@ public class BlackJack
     {
         ArrayList<Player> players = new ArrayList<>();
         System.out.println("Welcome to Blackjack! Let's start!");
-        System.out.print("How many Players are playing? ");
+        System.out.println("How many Players are playing? ");
         Scanner input = new Scanner(System.in);
         int noOfPlayers = input.nextInt();
         boolean a = true;
@@ -33,12 +33,12 @@ public class BlackJack
        {
             for(int i=0;i<noOfPlayers;i++)//Base settings for players 
             {
-                System.out.print("Enter name of Player " + (i+1) + ": ");
+                System.out.println("Enter name of Player " + (i+1) + ": ");
                 name = input.next();
                 BlackjackPlayer player = new BlackjackPlayer(name);
                 players.add(player);  
                 System.out.println();
-                System.out.print(players.get(i).getName() + ", " + "how much are you willing to bet? ");
+                System.out.println(players.get(i).getName() + ", " + "how much are you willing to bet? ");
                 int bet = input.nextInt();
                 if (bet > Bank.getBet())
                 {
@@ -90,10 +90,12 @@ public class BlackJack
              {
                  System.out.println(card.getValue() + " of " + card.getSuit());
                  System.out.println("Dealer's deck value is: " + result);
+                 /*
                  if (result <17)
                    black.Draw();
                  else 
                    black.Stand();
+                */
               }
              //PlayGame game = new PlayGame (name);
              game.play();

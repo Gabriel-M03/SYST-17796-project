@@ -36,16 +36,18 @@ public class BlackjackPlayer extends Player
     {      
            Scanner input = new Scanner(System.in);
            System.out.println("Player do you want to stand or draw");
-           System.out.print("1 for stand, and 2 for draw: ");
+           System.out.println("1 for stand, and 2 for draw: ");
            int decision = input.nextInt();
            if(decision == 1)
            {
                Stand();
            }
+           /*
            if (BlackJack.result > 21)
            {
                Stand();
            }
+            */
            else if(decision == 2)
            {
                Draw();
@@ -55,7 +57,7 @@ public class BlackjackPlayer extends Player
     {
         Scanner input = new Scanner(System.in);
         System.out.println("Do you want to restart the game?");
-        System.out.print("Type 1 for yes or 0 for no: ");
+        System.out.println("Type 1 for yes or 0 for no: ");
         int choice = input.nextInt();
         boolean a = true;
         
