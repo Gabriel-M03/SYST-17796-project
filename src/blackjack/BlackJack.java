@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class BlackJack 
 {
-
     static int result;
     /**
      * @param args the command line arguments
