@@ -23,10 +23,11 @@ public class BlackjackPlayer extends Player
     public void Draw()
     {
         Card [] hand = GroupOfCards.generateHand(1);
-       for (Card card : hand) 
+        for (Card card : hand) 
         {
             System.out.println("Player draws " + card.getValue() + " of " + card.getSuit());
         }
+        //players.get(1).addCard(hand);
     }
     
     @Override

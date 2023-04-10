@@ -28,7 +28,28 @@ public class PlayGame extends Game
 
     @Override
     public void play() {
-
+        BlackJack game = new BlackJack();
+        
+        int dealerResult =  
+                
+        for (Player player: players)
+        {
+            int playerResult = BlackJack.result;
+        if (playerResult == 21)
+        {System.out.print(player.getName() + " BlackJack! ");}
+        if (dealerResult == 21)
+        {System.out.print("Dealer BlackJack!");}
+        
+        if (playerResult > 21)
+        {System.out.println(player.getName() + " busted! Dealer wins!");}
+        else if (dealerResult > 21)
+        {System.out.println("Dealer busted! " + player.getName() + " wins!");}
+        else if (playerResult > dealerResult)
+        {System.out.println(player.getName() + " wins!");}
+        else if (playerResult == dealerResult)
+        {System.out.println(player.getName() + " and Dealer tie.");}
+        else {System.out.println("Dealer wins!");}
+        }
     }
     
     public int computeValue(Card[] cardHand)
@@ -107,7 +128,14 @@ public class PlayGame extends Game
       {
         handValue -=10;
       }
-     
+//      if (handValue == 21)
+//      {
+//          System.out.println("BlackJack!");
+//      }
+//      if (handValue > 21)
+//      {
+//          System.out.println("Hand Busted!");
+//      }
       return handValue;
     } 
 }
