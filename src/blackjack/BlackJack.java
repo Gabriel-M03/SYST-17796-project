@@ -10,7 +10,6 @@ public class BlackJack
     public static void main(String[] args) 
     {
         ArrayList<Player> players = new ArrayList<>();
-        ArrayList<Card> cards = new ArrayList<>();
         System.out.println("Welcome to Blackjack! Let's start!");
         System.out.println("How many Players are playing?");
         Scanner input = new Scanner(System.in);
@@ -65,11 +64,12 @@ public class BlackJack
            //int result = game.handValue;
            System.out.println();
            System.out.println(players.get(i).getName() + "'s deck value: " + result);
-           
+
            System.out.println();
 
            BlackjackPlayer black = new BlackjackPlayer(name);
            black.play();
+           black.ask();
 
         }//End of player for loop
         //Dealer is given card
@@ -82,6 +82,6 @@ public class BlackJack
         PlayGame game = new PlayGame(name);//Object call
         int result = game.computeValue();//Method call to compute the total value of the dealer
         System.out.println("Dealers total deck value: " + result );
-        //This is for the turn of the players             
+        //This is for the turn of the players
     }//End of Main method
 }//End of mmain

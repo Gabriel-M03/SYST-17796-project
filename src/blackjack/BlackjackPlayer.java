@@ -48,9 +48,22 @@ public class BlackjackPlayer extends Player
            else if(decision == 2)
            {
                Draw();
-           }
-           
+           }           
     }
-    
-    
+    public void ask()
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Do you want to restart the game?");
+        System.out.println("Type yes or no");
+        int choice = input.nextInt();
+        
+        if(choice == 1)
+        {
+            System.out.println("Game continuing...");
+        }
+        else if(choice == 0)
+        {
+            System.out.println("Game ending");
+        }     
+    }
 }
