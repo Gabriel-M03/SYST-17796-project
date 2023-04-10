@@ -78,7 +78,7 @@ public class BlackJack
 
                 System.out.println();
 
-                black.play();
+                
 
              }//End of player for loop
              Card[] cardHand = GroupOfCards.generateHand(1);
@@ -96,6 +96,8 @@ public class BlackJack
                    black.Stand();
                 */
               }
+             
+             black.play();
              //PlayGame game = new PlayGame (name);
              game.play();
              //This is for the turn of the players
