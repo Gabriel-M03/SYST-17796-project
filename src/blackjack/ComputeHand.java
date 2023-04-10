@@ -1,6 +1,7 @@
 package blackjack;
 
-public class ComputeHand extends Game{
+public class ComputeHand extends Game
+{
     
     public ComputeHand(String name) {
         super(name);
@@ -10,6 +11,8 @@ public class ComputeHand extends Game{
     public void play() {
         
     }
-    
+    @Override
+    public void declareWinner()
+    {}
     
 }
