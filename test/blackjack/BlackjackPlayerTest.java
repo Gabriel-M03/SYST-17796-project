@@ -11,8 +11,8 @@ import static org.junit.Assert.*;
  *
  * @author sookraja
  */
-public class BlackjackPlayerTest {
-    
+public class BlackjackPlayerTest 
+{    
     public BlackjackPlayerTest() {
     }
     
