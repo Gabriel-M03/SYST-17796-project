@@ -92,9 +92,11 @@ public class BlackJack
              }
             
             black.play();
+            
             //PlayGame game = new PlayGame (name);
             //This is for the turn of the players
             int dealerResult; 
+            
             Card[] dealerHand = GroupOfCards.generateHand(1);
             PlayGame dealerGame = new PlayGame("Dealer");
             dealerResult = dealerGame.computeValue(dealerHand);

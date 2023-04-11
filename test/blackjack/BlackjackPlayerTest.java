@@ -1,5 +1,8 @@
 package blackjack;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.InputMismatchException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -58,16 +61,27 @@ public class BlackjackPlayerTest
      * Test of ask method, of class BlackjackPlayer.
      */
     @Test
-    public void testAsk() 
-    {
+    public void testAskGood() {
         System.out.println("ask");
         BlackjackPlayer instance = new BlackjackPlayer("test");
-        int choice = 1;
-        boolean expResult = true;
+        String input = "1";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
         boolean result = instance.ask();
-        assertEquals(expResult, result);
+        assertEquals(true, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+    @Test(expected = InputMismatchException.class)
+    public void testAskBad() {
+        System.out.println("ask");
+        BlackjackPlayer instance = new BlackjackPlayer("test");
+        String input = "g";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        boolean result = instance.ask();
+        assertEquals(input, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 }
