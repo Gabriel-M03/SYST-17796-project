@@ -36,10 +36,9 @@ public class BlackjackPlayerTest
      * Test of Stand method, of class BlackjackPlayer.
      */
     @Test
-    public void testStand() {
+    public void testStand() 
+    {
         System.out.println("Stand");
-        BlackjackPlayer instance = null;
-        instance.Stand();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -48,10 +47,9 @@ public class BlackjackPlayerTest
      * Test of play method, of class BlackjackPlayer.
      */
     @Test
-    public void testPlay() {
+    public void testPlay() 
+    {
         System.out.println("play");
-        BlackjackPlayer instance = null;
-        instance.play();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -60,7 +58,8 @@ public class BlackjackPlayerTest
      * Test of ask method, of class BlackjackPlayer.
      */
     @Test
-    public void testAsk() {
+    public void testAsk() 
+    {
         System.out.println("ask");
         BlackjackPlayer instance = new BlackjackPlayer("test");
         int choice = 1;
