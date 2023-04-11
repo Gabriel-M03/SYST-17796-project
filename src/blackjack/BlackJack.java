@@ -69,13 +69,14 @@ public class BlackJack
                     {
                         System.out.println(card.getValue() + " of " + card.getSuit());
                     }  
-                }
+                }   
                 int result = game.computeValue(cardHand);//Method call to compute the total value of the players deck
                 //int result = game.handValue;
                 System.out.println();
                 System.out.println(players.get(i).getName() + "'s deck value: " + result);
 
                 System.out.println();
+                player.setCardHand(cardHand);
             }//End of player for loop
             Card[] cardHand = GroupOfCards.generateHand(1);
             int result = game.computeValue(cardHand);
@@ -89,7 +90,7 @@ public class BlackJack
                 //else 
                   black.Stand();
              }
-
+            
             black.play();
             //PlayGame game = new PlayGame (name);
             //This is for the turn of the players

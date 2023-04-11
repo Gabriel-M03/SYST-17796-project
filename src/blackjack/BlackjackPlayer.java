@@ -1,5 +1,7 @@
 package blackjack;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -14,7 +16,15 @@ public class BlackjackPlayer extends Player
         String playerStatus = "Player";
     }
     
-
+    private Card [] cardHand = new Card[3];
+    
+    public void setCardHand(Card [] cardHand){
+        this.cardHand = cardHand;
+    }
+    
+    public Card[] getCardHand() {
+        return cardHand;
+    }
     @Override
     public void Draw()
     {
@@ -74,9 +84,15 @@ public class BlackjackPlayer extends Player
                     acesInHand++;
                     break;               
             }
-            int newDeck = handValue + game.computeValue(hand);
-            System.out.println("New deck is: " + newDeck);
-            System.out.println();
+        /// adding the new card into the player's hand     
+        ArrayList <Card> listCardHand = new ArrayList(Arrays.asList(cardHand));
+        listCardHand.add(card);
+        cardHand = listCardHand.toArray(hand);
+        setCardHand(cardHand);
+        
+        int newDeck = handValue + game.computeValue(hand);
+        System.out.println("New deck is: " + newDeck);
+        System.out.println();
         }
     }
     
