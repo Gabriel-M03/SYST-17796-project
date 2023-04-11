@@ -24,8 +24,58 @@ public class BlackjackPlayer extends Player
         {
             System.out.println();
             System.out.println("Card drawn: " + card.getValue() + " of " + card.getSuit());
-            game.computeValue(hand);
-            System.out.println("New deck is: " + card.getValue());
+            int handValue = 0;
+            int acesInHand = 0;
+            switch(card.getValue())
+            {
+                case TWO:
+                    handValue += 2;
+                    break;
+
+                case THREE:
+                    handValue += 3;
+                    break;
+
+                case FOUR:
+                    handValue += 4;
+                    break;
+
+                case FIVE:
+                     handValue += 5;
+                     break;
+
+                case SIX:
+                     handValue += 6;
+                     break;
+
+                case SEVEN:
+                     handValue += 7;
+                     break;
+
+                case EIGHT:
+                     handValue += 8;
+                     break;
+
+                case NINE:
+                     handValue += 9;
+                     break;
+
+                case TEN:
+                     handValue += 10;
+                     break;
+
+                case JACK:
+                case QUEEN:
+                case KING:
+                    handValue += 10;
+                     break;
+
+                case ACE:
+                    acesInHand++;
+                    break;               
+            }
+            int newDeck = handValue + game.computeValue(hand);
+            System.out.println("New deck is: " + newDeck);
             System.out.println();
         }
     }
