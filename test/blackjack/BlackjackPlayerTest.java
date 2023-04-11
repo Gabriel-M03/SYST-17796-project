@@ -42,10 +42,20 @@ public class BlackjackPlayerTest
     public void testStand() 
     {
         System.out.println("Stand");
+        BlackjackPlayer instance = new BlackjackPlayer("test");
+        instance.Stand();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-
+    @Test
+    public void testStandBad()
+    {
+        System.out.println("Stand");
+        BlackjackPlayer instance = new BlackjackPlayer("test");
+        instance.Stand();
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     /**
      * Test of play method, of class BlackjackPlayer.
      */
@@ -53,6 +63,17 @@ public class BlackjackPlayerTest
     public void testPlay() 
     {
         System.out.println("play");
+        BlackjackPlayer instance = new BlackjackPlayer("test");
+        instance.play();
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    @Test
+    public void testPlayBad()
+    {
+        System.out.println("play");
+        BlackjackPlayer instance = new BlackjackPlayer("test");
+        instance.play();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
